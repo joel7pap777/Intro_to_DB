@@ -1,16 +1,16 @@
-def perform_operation(num1, num2, operator):
-    operator = operator.strip().lower()
+def perform_operation(num1, num2, operation):
+    operation = operation.strip().lower()
 
-    if operator == "add":
+    if operation == "add":
         return num1 + num2
 
-    elif operator == "subtract":
+    elif operation == "subtract":
         return num1 - num2
 
-    elif operator == "multiply":
+    elif operation == "multiply":
         return num1 * num2
 
-    elif operator == "divide":
+    elif operation == "divide":
         if num2 == 0:
             return "cannot divide by 0"
         return num1 / num2
