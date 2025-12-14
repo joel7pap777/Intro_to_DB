@@ -20,6 +20,7 @@ CREATE TABLE Books (
         ON DELETE RESTRICT
 );
 
+
 CREATE TABLE Customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(215) NOT NULL,
