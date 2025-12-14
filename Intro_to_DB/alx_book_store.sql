@@ -54,3 +54,4 @@ CREATE TABLE Order_Details (
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
+
