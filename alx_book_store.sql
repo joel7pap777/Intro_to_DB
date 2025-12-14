@@ -28,32 +28,17 @@ CREATE TABLE Customers (
 );
 
 CREATE TABLE Orders (
-    order_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    order_date DATE NOT NULL,
-    CONSTRAINT fk_orders_customers
-        FOREIGN KEY (customer_id)
-        REFERENCES Customers(customer_id)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 CREATE TABLE Order_Details (
-    orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
-    order_id INT NOT NULL,
-    book_id INT NOT NULL,
-    quantity DOUBLE NOT NULL,
-    CONSTRAINT fk_orderdetails_orders
-        FOREIGN KEY (order_id)
-        REFERENCES Orders(order_id)
-        ON UPDATE CASCADE
-        ON DELETE CASCADE,
-    CONSTRAINT fk_orderdetails_books
-        FOREIGN KEY (book_id)
-        REFERENCES Books(book_id)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
+    orderdetailid INT PRIMARY KEY,
+    order_id INT,
+    book_id INT,
+    quantity DOUBLE,
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
-
-
-
